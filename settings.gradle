@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        google()
+        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "com.android.application" || requested.id.id == "com.android.library") {
+                useModule("com.android.tools.build:gradle:8.0.0")
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        // Add JitPack repository below this line
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "MyBankingApp"
+include ':app'

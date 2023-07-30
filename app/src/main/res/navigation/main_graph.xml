@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.shersar.mybankingapp.presentation.sign_up.SignUpScreen"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_verifySmsFragment"
+            app:destination="@id/verifySmsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifySmsFragment"
+        android:name="com.shersar.mybankingapp.presentation.verify.VerifyScreen"
+        android:label="fragment_verify_sms"
+        tools:layout="@layout/fragment_verify_sms" >
+        <action
+            android:id="@+id/action_verifySmsFragment_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.shersar.mybankingapp.presentation.home.HomeScreen"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" />
+    <fragment
+        android:id="@+id/signInScreen"
+        android:name="com.shersar.mybankingapp.presentation.sign_in.SignInScreen"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInScreen_to_verifySmsFragment"
+            app:destination="@id/verifySmsFragment" />
+    </fragment>
+</navigation>
